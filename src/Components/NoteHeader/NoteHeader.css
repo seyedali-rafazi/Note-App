@@ -1,0 +1,7 @@
+.noteHeader{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid black;
+    margin-bottom: 5px;
+    padding: 10px;
+}

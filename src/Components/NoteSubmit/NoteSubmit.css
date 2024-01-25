@@ -1,0 +1,23 @@
+.note_submit {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 400px;
+    height: auto;
+    margin-top: 2rem;
+
+}
+
+.note_submit .submit_form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+}
+
+.note_submit .submit_form  input{
+    border: 2px solid rgb(201, 201, 201);
+    border-radius: 15px;
+    padding: 10px;
+
+}

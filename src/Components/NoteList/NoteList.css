@@ -1,0 +1,52 @@
+.list_notes{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin-top: 32px;
+
+}
+.list_notes .header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.list_notes .left_header{
+
+}
+
+.list_notes .left_header .header_title{
+    text-align: left;
+}
+.completed .header_title{
+    text-decoration: line-through;
+    color: rgb(141, 227, 12);
+}
+.completed {
+    opacity: 80%;
+}
+
+.list_notes .footer .left_header .header_description{
+
+}
+
+
+.list_notes .right_header{
+    display: flex;
+    gap: 10px;
+}
+
+.list_notes .right_header button{
+    font-size: 18px;
+}
+
+.list_notes .footer{
+    text-align: left;
+    color: rgb(190, 190, 190);
+
+}
+
+.closer{
+    display: none;
+}
