@@ -1,7 +1,7 @@
 import React, { useReducer, useState } from "react";
 import "./App.css";
 import NoteSubmit from "./Components/NoteSubmit/NoteSubmit";
-import NoteList from "./Components/noteList/noteList";
+import NoteList from "./Components/NoteList/NoteList";
 import NoteStatue from "./Components/NoteStatue/NoteStatue";
 import NoteHeader from "./Components/NoteHeader/NoteHeader";
 

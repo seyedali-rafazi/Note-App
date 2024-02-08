@@ -1,8 +1,29 @@
-# React + Vite
+# My Notes App
+### [Live](https://note-app-two-roan.vercel.app/) project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This repository contains a simple React application designed for managing notes. The app is comprised of various components that collaboratively offer fundamental note-taking functionality.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Components
+### 1. NoteSubmit
+- File: NoteSubmit.js
+- Description: Allows users to add new notes through a form with input fields for the note title and description. Submissions trigger the onAddNote function with the note details.
+### 2. NoteStatue
+- File: NoteStatue.js
+- Description: Displays note statistics, including the total number of notes, completed notes, and open (incomplete) notes. A message is displayed if there are no notes.
+### 3. NoteList
+- File: NoteList.js
+- Description: Renders a list of notes based on sorting options. It can sort notes by earliest creation date, latest creation date, or completion status. The sorted notes are displayed using the NoteItem component.
+### 4. NoteItem
+- File: NoteItem.js
+- Description: Represents an individual note with a title, description, delete button, and a checkbox for marking completion. The creation date is also displayed.
+### 5. NoteHeader
+- File: NoteHeader.js
+- Description: Displays the application header, including the title "My Notes" and a dropdown for selecting sorting options. It shows the total number of notes.
+### 6. Message
+- File: Message.js
+- Description: A simple component for displaying messages, utilized in NoteStatue to show a message when there are no notes.
+### How to Use
+- Clone the repository.
+- Install dependencies using npm install.
+- Run the app using npm start.
