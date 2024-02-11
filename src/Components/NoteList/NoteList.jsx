@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "../../App.css";
 import "../NoteList/NoteList.css";
+import { useNote, useNoteDispatch } from "../Contex/NoteContex";
 
-function NoteList({ notes, onDelete, onComplete, sortBy }) {
+function NoteList({ sortBy }) {
+  const notes = useNote();
   let sortedNotes = notes;
 
   if (sortBy == "earliest")
@@ -22,12 +24,7 @@ function NoteList({ notes, onDelete, onComplete, sortBy }) {
   return (
     <div>
       {sortedNotes.map((note) => (
-        <NoteItem
-          key={note.id}
-          note={note}
-          onDelete={onDelete}
-          onComplete={onComplete}
-        />
+        <NoteItem key={note.id} note={note} />
       ))}
     </div>
   );
@@ -35,7 +32,8 @@ function NoteList({ notes, onDelete, onComplete, sortBy }) {
 
 export default NoteList;
 
-function NoteItem({ note, onDelete, onComplete }) {
+function NoteItem({ note }) {
+  const dispatch = useNoteDispatch();
   const options = {
     year: "numeric",
     month: "long",
@@ -49,13 +47,20 @@ function NoteItem({ note, onDelete, onComplete }) {
           <p className="header_description">{note.description}</p>
         </div>
         <div className="right_header">
-          <button onClick={() => onDelete(note.id)}>❌</button>
+          <button
+            onClick={() => dispatch({ type: "deleteNotes", payload: note.id })}
+          >
+            ❌
+          </button>
           <input
             type="checkbox"
             name={note.id}
             id={note.id}
             value={note.id}
-            onChange={() => onComplete(note.id)}
+            onChange={(e) => {
+              const noteId = Number(e.target.value);
+              dispatch({ type: "completeNotes", payload: noteId });
+            }}
           />
         </div>
       </div>

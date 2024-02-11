@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "../NoteStatue/Notestatue.css";
 import Message from "../Message/Message";
+import { useNote } from "../Contex/NoteContex";
 
-function NoteStatue({ notes }) {
+function NoteStatue() {
+  const notes = useNote();
   const allNoteStatue = notes.length;
   const completeNoteStatue = notes.filter((n) => n.completed).length;
   const openNoteStatue = allNoteStatue - completeNoteStatue;

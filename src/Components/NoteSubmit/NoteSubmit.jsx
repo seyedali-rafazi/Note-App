@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "../../App.css";
 import "./NoteSubmit.css";
+import { useNoteDispatch } from "../Contex/NoteContex";
 
-function NoteSubmit({ onAddNote }) {
+function NoteSubmit() {
+  const dispatch = useNoteDispatch();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -23,7 +25,7 @@ function NoteSubmit({ onAddNote }) {
 
     setTitle("");
     setDescription("");
-    onAddNote(newNote);
+    dispatch({ type: "addNotes", payload: newNote });
   };
 
   return (

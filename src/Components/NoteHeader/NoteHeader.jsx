@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "../../App.css";
 import "../NoteHeader/NoteHeader.css";
+import { useNote } from "../Contex/NoteContex";
 
-function NoteHeader({ notes, sortBy, onSort }) {
+function NoteHeader({ sortBy, onSort }) {
+  const notes = useNote()
   return (
     <div className="noteHeader">
       <h1>My Notes({notes.length})</h1>
